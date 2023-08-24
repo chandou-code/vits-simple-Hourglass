@@ -11,8 +11,8 @@
 
     @require_api_key
     def voice_vits_api():
-    url = 'http://127.0.0.1:3000/'
-    r = requests.get(url)
+        url = 'http://127.0.0.1:3000/'
+        r = requests.get(url)
 
     try:
 
