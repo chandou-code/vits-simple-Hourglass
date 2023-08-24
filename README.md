@@ -18,4 +18,4 @@
 
         if request.method == "GET":
 
-然后只需要运行Hourglass即可
+然后只需要把Hourglass.py放到app.py的同级目录下，然后运行Hourglass.py即可
