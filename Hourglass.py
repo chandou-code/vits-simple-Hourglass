@@ -60,7 +60,7 @@ def hello():
 
 
 if __name__ == '__main__':
-    part = input('输入沙漏翻转间隔')
+    part = int(input('输入沙漏翻转间隔'))
     timer = SandTimer(part, callback)
     import subprocess
 
