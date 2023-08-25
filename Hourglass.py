@@ -4,7 +4,7 @@ import time
 import psutil
 from flask import Flask
 import pygetwindow as gw
-
+import sys
 app = Flask(__name__)
 
 
@@ -30,7 +30,17 @@ def request_handler():
 
     timer.start()
 
+def restart_process():
+    # 关闭已有进程
+    for process in psutil.process_iter():
+        if process.name() == 'python.exe' and 'app.py' in process.cmdline():
+            process.kill()
 
+    # 打印重启提示
+    print('重启中...')
+
+    # 启动新进程
+    subprocess.Popen(['python', 'app.py'], shell=True)
 def callback():
     print("沙子漏完了，执行某个函数")
     # 关闭已有进程
@@ -38,19 +48,21 @@ def callback():
     #     if process.name() == 'python.exe' and 'app.py' in process.cmdline():
     #         process.kill()
 
+    restart_process()
     # 获取所有Python窗口
-    python_windows = gw.getWindowsWithTitle('Python')
-
-    # 遍历窗口并关闭
-    for window in python_windows:
-        if 'app.py' in window.title:
-            window.close()
-
-    # 打印重启提示
-    print('重启中...')
-
-    # 启动新进程
-    subprocess.Popen('cmd /c start cmd.exe /K python app.py', shell=True)
+    # python_windows = gw.getWindowsWithTitle('Python')
+    #
+    # # 遍历窗口并关闭
+    # for window in python_windows:
+    #     if 'app.py' in window.title:
+    #         window.close()
+    #
+    # # 打印重启提示
+    # print('重启中...')
+    #
+    #
+    # # 启动新进程
+    # subprocess.Popen('cmd /c start cmd.exe /K python app.py', shell=True)
 
 
 @app.route("/", methods=["GET", "POST"])
