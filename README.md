@@ -19,3 +19,5 @@
         if request.method == "GET":
 
 然后只需要把Hourglass.py放到app.py的同级目录下，然后运行Hourglass.py即可
+
+(改了一下 这回不会打团的时候突然弹出cmd了
