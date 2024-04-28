@@ -1,4 +1,4 @@
-当然可以！以下是一个更新后的 README 文件的示例：
+
 
 VITS Simple Hourglass
 概述
