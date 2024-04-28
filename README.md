@@ -14,10 +14,10 @@ VITS Simple Hourglass 使用了一种简单而有效的解决方案：通过翻�
 
 在原项目的 app.py 中添加两行代码： 在原项目的 app.py 文件中找到 voice_vits_api() 函数，添加以下两行代码：
 
-'''
+```
 url = 'http://127.0.0.1:3000/'
 r = requests.get(url)
-'''
+```
 
 最后将 Hourglass.py 文件放到 app.py 的同级目录下，然后运行 Hourglass.py 即可。
 
