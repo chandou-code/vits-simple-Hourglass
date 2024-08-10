@@ -1,6 +1,6 @@
 
 
-### VITS Simple Hourglass
+### V Simple Hourglass
 ### 概述
 VITS Simple Hourglass 是基于 VITS Simple API 的一个增强版，解决了合成完一次语音后内存无法释放导致内存溢出的问题。
 
